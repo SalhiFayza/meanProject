@@ -1,0 +1,70 @@
+<div class="container">
+
+
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Create a Student </h1>
+        </div>
+        <form #f="ngForm" (ngSubmit)="add(f)">
+            <div class="form-group row ">
+                <div class="col-sm-6 mb-3 mb-sm-0 ">
+                    <input type="text " class="form-control form-control-user " placeholder="First Name " required name="firstName" #firstName="ngModel" ngModel minlength="2" maxlength="20">
+                    <div class="alert alert-danger" *ngIf="firstName.errors?.['required'] && firstName.touched">
+                        First Name is required (-_-)
+                    </div>
+                    <div class="alert alert-danger" *ngIf="firstName.errors?.['minlength'] && firstName.touched">
+                        First Name must be minim 2 caracters (-_-)
+                    </div>
+                </div>
+                <div class="col-sm-6 ">
+                    <input type="text " class="form-control form-control-user " placeholder="Last Name " required name="lastName" #lastName="ngModel" ngModel minlength="2" maxlength="20">
+                    <div class="alert alert-danger" *ngIf="lastName.errors?.['required'] && lastName.touched">
+                        Last Name is required (-_-)
+                    </div>
+                    <div class="alert alert-danger" *ngIf="lastName.errors?.['minlength'] && lastName.touched">
+                        Last Name must be minim 2 caracters (-_-)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <input type="email " class="form-control form-control-user " placeholder="Email Address " email required name="email" #email="ngModel" ngModel>
+                <div class="alert alert-danger" *ngIf="email.errors?.['required'] && email.touched">
+                    Email is required (-_-)
+                </div>
+                <div class="alert alert-danger" *ngIf="email.errors?.['email'] && email.touched">
+                    The input must be email not String (-_-)
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div class="col-sm-6 mb-3 mb-sm-0 ">
+                    <input type="number " class="form-control form-control-user " placeholder="Age " required name="age" #age="ngModel" ngModel>
+                    <div class="alert alert-danger" *ngIf="age.errors?.['required'] && age.touched">
+                        Age is required (-_-)
+                    </div>
+                    <div class="alert alert-danger" *ngIf="age.errors?.['age'] && age.touched">
+                        The input must be Number (-_-)
+                    </div>
+                </div>
+                <div class="col-sm-6 ">
+                    <input type="number " class="form-control form-control-user " placeholder="Phone Number " required name="phone" #phone="ngModel" ngModel>
+                    <div class="alert alert-danger" *ngIf="phone.errors?.['required'] && phone.touched">
+                        Phone is required (-_-)
+                    </div>
+                    <div class="alert alert-danger" *ngIf="phone.errors?.['phone'] && phone.touched">
+                        The input must be Number (-_-)
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="messageErr">
+                {{messageErr}}
+            </div>
+            <button type="submit" class="btn btn-primary btn-user btn-block " [disabled]="f.invalid">
+                                Add Student
+            </button>
+
+
+        </form>
+
+
+    </div>
+</div>

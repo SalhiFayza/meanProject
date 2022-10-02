@@ -1,0 +1,19 @@
+<div class="container">
+    <ul *ngIf="dataObject">
+        <li>First Name: {{dataObject.firstName}}</li>
+        <li>Last Name: {{dataObject.lastName}}</li>
+
+        <li>Email: {{dataObject.email}}</li>
+
+        <li>Age: {{dataObject.age}}</li>
+
+        <li>Phone: {{dataObject.phone}}</li>
+
+    </ul>
+
+
+
+    <div class="alert alert-danger" *ngIf="messageErr">
+        {{messageErr}}
+    </div>
+</div>

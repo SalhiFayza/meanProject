@@ -1,0 +1,20 @@
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <div class="w3-container" id="contact" style="margin-top:75px">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <h1 class="w3-xxxlarge " style="color:rgb(226, 190, 190)"><b>Student Details.</b></h1>
+            <hr style="width:50px;border:5px solid rgb(226, 190, 190)" class="w3-round">
+            <!-- DataTales Example -->
+            <ul *ngIf="dataStudent">
+                <li>First Name: {{dataStudent.firstName}}</li>
+                <li>Last Name: {{dataStudent.lastName}}</li>
+                <li>Email: {{dataStudent.email}}</li>
+                <li>Age: {{dataStudent.age}}</li>
+                <li>Phone: {{dataStudent.phone}}</li>
+            </ul>
+            <div class="alert alert-danger" *ngIf="!dataStudent"> -_- We don't have this student in our database</div>
+
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+</div>

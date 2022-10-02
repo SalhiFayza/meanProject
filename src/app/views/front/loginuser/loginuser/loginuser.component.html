@@ -1,0 +1,34 @@
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <!-- Contact -->
+    <div class="w3-container" id="contact" style="margin-top:75px">
+        <h1 class="w3-xxxlarge " style="color:rgb(226, 190, 190)"><b>Login.</b></h1>
+        <hr style="width:50px;border:5px solid rgb(226, 190, 190)" class="w3-round">
+
+        <form #f="ngForm" (ngSubmit)="login(f)">
+
+            <div class="w3-section">
+                <label>Email</label>
+                <input class="w3-input w3-border" type="email" name="email" ngModel #email="ngModel" required>
+                <div class="alert alert-danger" *ngIf="email.errors?.['required'] && email.touched">
+                    Email is required (-_-)
+                </div>
+                <div class="alert alert-danger" *ngIf="email.errors?.['email'] && email.touched">
+                    The input must be email not String (-_-)
+                </div>
+            </div>
+            <div class="w3-section">
+                <label>Password</label>
+                <input class="w3-input w3-border" type="password" name="password" ngModel #password="ngModel" required>
+                <div class="alert alert-danger" *ngIf="password.errors?.['required'] && password.touched">
+                    Password is required (-_-)
+                </div>
+
+            </div>
+            <div class="alert alert-danger" *ngIf="messageError">
+                {{messageError}}
+            </div>
+            <button type="submit" class="w3-button w3-block w3-padding-large  w3-margin-bottom" style="background-color: rgb(226, 190, 190); ">Login</button>
+        </form>
+    </div>
+</div>
+<!-- End page content -->
